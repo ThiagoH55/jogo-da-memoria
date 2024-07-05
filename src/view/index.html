@@ -1,214 +1,109 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>JOGO DA MEMÓRIA</title>
     <style>
         body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             height: 100vh;
-            font-family: "Montserrat", sans-serif;
-        }
+            background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220428/pngtree-animal-cartoon-in-the-beautiful-green-forest-landscape-image_1107110.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
 
-        .titulo {
-            text-align: center;
         }
 
         .container {
-            display: block;
-        }
-
-        .left {
+            height: 100%;
             display: flex;
-            justify-content: start;
+            justify-content: center;
+            align-items: center;
+
         }
 
-        .right {
+        .border {
+            height: 25%;
             display: flex;
-            justify-content: end;
+            justify-content: center;
+            align-items: center;
+            border: 20px solid rgb(10, 65, 28);
+            border-radius: 35%;
+            padding: 7%;
+            position: relative;
+            margin: 0;
+            overflow: hidden;
         }
 
-        .profile {
-            height: 100px;
+
+        .button {
+            text-align: center;
+            min-height: auto;
+            border: 20%;
+
         }
 
-        .contact {
-            display: none;
+        input[type='button'] {
+            padding-inline: 50px;
+            padding-block: 50px;
+            border-radius: 50%;
+            padding: 6%;
+            background-color:rgba(173, 153, 66, 0.89);
+            border-color: rgba(102, 49, 6, 0.712);
+            cursor: pointer;
+            
+        
         }
 
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        #background {
+            height: 100%;
+            width: 100%;
+            background-color: darkgreen;
+            position: absolute;
+            z-index: 0;
+            opacity: 50%;
+        }
     </style>
-</head>   
+</head>
+
 <body>
-    <div>
-        <div class="titulo">
-            <h1>Sobre nós</h1>
-            <p>Jogo da memoria, primeiro projeto desenvolvido por componentes de uma equipe com o objetivo de adquirir habilidade de HTML e CSS de todos os integrantes, localizado na Instituição Ponto Cidadão em Igarassu, PE. A atividade para estimula o cérebro de diversas maneiras, incluindo a memória de curto prazo, o raciocínio lógico, a coordenação motora e a agilidade mental. À medida que os jogadores desafiam suas mentes, estão contribuindo para o fortalecimento de redes neurais e para um desenvolvimento cognitivo mais completo.</p>
+    <div class="container">
+        <div class="border">
+            <div class="content">
+                <div>
+                    <h1>JOGO DA MEMÓRIA</h1>
+                </div>
+                <div class="button">
+                    <div>
+                        <input type="button" value="JOGAR">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="button" value="OPÇÕES">
+                    </div>
+                    <br>
+                    <div>
+                        <a href="./sobre.html">
+                            <input type="button" value="SOBRE">
+                        </a>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="button" value="SAIR">
+                    </div>
+                </div>
+            </div>
+
+            <div id="background"></div>
         </div>
     </div>
 
-    <div>
-        <div class="left">
-            <div id="thiago" class="container">
-                
-                <div>
-                    <button onclick="mostrarContato('thiago-contact')">Thiago</button>
-                </div>
-                
-                <div id="thiago-contact" class="contact">
-                    <div>
-                        <img class="profile" src="https://pics.craiyon.com/2023-05-28/f68139d6eb774beeb4e4add450c4ed30.webp" alt="">
-                    </div>
-                    <div>
-                        <h3>Thiago Henrique Siqueira dos Santos</h3>
-                    </div>
-
-                    <div>
-                        <span style="font-weight: bold;">Responsabilidade:</span>
-                        Sobre 
-                    </div>
-
-                    <div>
-                        <span style="font-weight: bold;">Whatsapp:</span>
-                        (81) 9 989654101
-                    </div>
-
-                    <div>
-                        <span style="font-weight: bold;">E-mail:</span>
-                        philipbhib15@gmail.com
-                    </div>
-
-                    <div>
-                        <span style="font-weight: bold;">GitHub:</span>
-                        BhibPH
-                    </div>
-
-                    <div>
-                        <a href="https://www.instagram.com/thi5go__h?igsh=MXE4OXI3dGh6czRkaA==" target="_blank">Instagram</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="right">
-            <div id="Emanuel" class="container">
-                <div>
-                    <img class="profile" src="data:image/jpeg;base64,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" alt="">
-                </div>
-                
-                <div>
-                    <button onclick="mostrarContato('Emanuel-contact')">Emanuel</button>
-                </div>
-    
-                <div id="Emanuel-contact" class="contact">
-                    <div>
-                        <h3>Emanuel Victor Silva Arcanjo</h3>
-                    </div>
-
-                    <div>
-                        <p>
-                            <span style="font-weight: bold;">Responsabilidade: </span>
-                            menu
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        
-        <div class="left">
-            <div id="Elaynne" class="container">
-                <div>
-                    <img class= "profile" src="https://www.shutterstock.com/image-photo/side-view-common-house-mouse-260nw-182094581.jpg" alt="">
-                </div>
-
-                <div>
-                    <button onclick="mostrarContato('Elaynne-contact')">Elaynne</button>
-                </div>
-
-                <div id="Elaynne-contact" class="contact">
-                    <div>
-                        <h3>Elaynne Fernandes dos Santos</h3>
-                    </div>
-                    <div>
-                        <p>Responsabilidade: Sobre</p>
-                    </div>
-                    <div>
-                        <p>Whatsapp: (81) 9 97818790</p>
-                    </div>
-                    <div>
-                        <p>E-mail: Santosfernandes064@gmail.com</p>
-                    </div>
-                    <div>
-                        <p>Github: elaynne-santos</p>
-                    </div>
-                    <div>
-                        <a href="https://www.instagram.com/elaynnefernand5?igsh=amNrbTF5cnl5cm4w" target="_blank" >Instagram</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        
-        <div class="right">
-            <div id="Laryssa" class="container">
-                <div>
-                    <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCTwiXOkYVrsUsGRKoEZUMOwiB0jbVQTg2Gw&s" alt="">
-                </div>
-
-                <div>
-                    <button onclick="mostrarContato('Laryssa-contact')">Laryssa</button>
-                </div>
-
-                <div id="Laryssa-contact" class="contact">
-                    <h1>teste</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="left">
-            <div id="Vinícius" class="container">
-                <div>
-                    <img class="profile" src="https://www.jax.org/-/media/jaxweb/images/jax-mice-and-services/mice/datasheets/000664.jpg?h=224&w=456&rev=25deb76a487e4319857f30df94cfa79d&hash=8F66E39655EE81BBC168FEF97D0CD96D" alt="">
-                </div>
-                
-                <div>
-                    <button onclick="mostrarContato('Vinícius-contact')">Vinícius</button>
-                </div>
-
-                <div id="Vinícius-contact" class="contact">
-                    <h1>teste</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="right">
-            <div id="Juan" class="container">
-                <div>
-                    <img class="profile" src="https://thumbs.dreamstime.com/z/side-profile-brown-mouse-against-white-background-showing-fine-fur-detail-whiskers-307041165.jpg" alt="">
-                </div>
-
-                <div>
-                    <button onclick="mostrarContato('Juan-contact')">Juan</button>
-                </div>
-
-                <div id="Juan-contact" class="contact">
-                    <h1></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function mostrarContato(id) {
-            const element = document.getElementById(id)
-
-            if (element.style.display != 'block') {
-                element.style.display = 'block'
-            } else {
-                element.style.display = 'none'
-            }
-        }
-    </script>
 </body>
+
 </html>
