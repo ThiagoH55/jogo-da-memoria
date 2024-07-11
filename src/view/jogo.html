@@ -6,8 +6,7 @@
     <title>JOGO DA MEMÓRIA</title>
     <style>
         body {
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            height: 100vh;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220428/pngtree-animal-cartoon-in-the-beautiful-green-forest-landscape-image_1107110.jpg");
             background-repeat: no-repeat;
             background-size: cover;
@@ -21,16 +20,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
         }
 
         .border {
-            height: 25%;
+            height: 60%;
+            width: 70%;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 20px solid rgb(10, 65, 28);
-            border-radius: 35%;
+            border-radius: 5%;
             padding: 7%;
             position: relative;
             margin: 0;
@@ -50,11 +49,11 @@
             padding-block: 50px;
             border-radius: 50%;
             padding: 6%;
-            background-color:rgba(173, 153, 66, 0.89);
+            background-color: rgba(173, 153, 66, 0.89);
             border-color: rgba(102, 49, 6, 0.712);
             cursor: pointer;
-            
-        
+
+
         }
 
         .content {
@@ -70,39 +69,43 @@
             z-index: 0;
             opacity: 50%;
         }
+
+        .container-button {
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: orange;
+            font-size: 60px;
+            margin-top: -10px;
+        }
+
+        .a-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="container-button">
+            <div class="a-container">
+                <a href="./index.html">&#8592;</a>
+            </div>
+        </div>
+
         <div class="border">
             <div class="content">
-                <div>
-                    <h1>JOGO DA MEMÓRIA</h1>
-                </div>
-                <div class="button">
-                    <div>
-                        <a href="./jogo.html">
-                            <input type="button" value="JOGAR">
-                        </a>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="button" value="OPÇÕES">
-                    </div>
-                    <br>
-                    <div>
-                        <a href="./sobre.html">
-                            <input type="button" value="SOBRE">
-                        </a>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="button" value="SAIR">
-                    </div>
-                </div>
+                
             </div>
-
+            
             <div id="background"></div>
         </div>
     </div>
