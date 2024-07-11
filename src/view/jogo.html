@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOGO DA MEMÓRIA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <style>
         body {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -90,6 +92,8 @@
             justify-content: center;
             align-items: center;
         }
+        
+
     </style>
 </head>
 
@@ -103,13 +107,104 @@
 
         <div class="border">
             <div class="content">
-                
+                <div>
+                    <div id='1'>
+                        <img src="../img_dos_animais/Girafa.jpg" alt="">
+                    </div>
+                    
+                </div>
             </div>
             
             <div id="background"></div>
         </div>
     </div>
 
+    <script>
+        let cards = [
+            {
+                id: '1',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Girafa.jpg'
+            },
+            {
+                id: '1',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Girafa.jpg'
+            },
+            {
+                id: '2',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Cobra.jpeg'
+            },
+            {
+                id: '2',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Cobra.jpeg'
+            },
+            {
+                id: '3',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Elefante.jpeg'
+            },
+            {
+                id: '3',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Elefante.jpeg'
+            },
+            {
+                id: '4',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Hipopotamo.jpeg'
+            },
+            {
+                id: '4',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Hipopotamo.jpeg'
+            },
+            {
+                id: '5',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Macaco.jpeg'
+            },
+            {
+                id: '5',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Macaco.jpeg'
+            },
+            {
+                id: '6',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Tigre.jpeg'
+            },
+            {
+                id: '6',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Tigre.jpeg'
+            },
+            {
+                id: '7',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Tucano.jpeg'
+            },
+            {
+                id: '7',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Tucano.jpeg'
+            },
+            {
+                id: '8',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Zebra.jpeg'
+            },
+            {
+                id: '8',
+                hash: window.crypto.randomUUID().replaceAll("-", ""),
+                img: '../img_dos_animais/Zebra.jpeg'
+            }
+        ]
+    </script>
+
 </body>
 
 </html>
+                
