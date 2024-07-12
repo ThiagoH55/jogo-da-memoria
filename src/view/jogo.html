@@ -61,6 +61,11 @@
         .content {
             position: relative;
             z-index: 1;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #background {
@@ -106,13 +111,9 @@
         </div>
 
         <div class="border">
-            <div class="content">
-                <div>
-                    <div id='1'>
-                        <img src="../img_dos_animais/Girafa.jpg" alt="">
-                    </div>
-                    
-                </div>
+            <div class="content" id="cards">
+                <div></div>
+               
             </div>
             
             <div id="background"></div>
@@ -124,87 +125,173 @@
             {
                 id: '1',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Girafa.jpg'
+                img: '../img_dos_animais/Girafa.jpg',
             },
             {
                 id: '1',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Girafa.jpg'
+                img: '../img_dos_animais/Girafa.jpg',
+               
             },
             {
                 id: '2',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Cobra.jpeg'
+                img: '../img_dos_animais/Cobra.jpeg',
+               
             },
             {
                 id: '2',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Cobra.jpeg'
+                img: '../img_dos_animais/Cobra.jpeg',
+               
             },
             {
                 id: '3',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Elefante.jpeg'
+                img: '../img_dos_animais/Elefante.jpeg',
+               
             },
             {
                 id: '3',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Elefante.jpeg'
+                img: '../img_dos_animais/Elefante.jpeg',
+               
             },
             {
                 id: '4',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Hipopotamo.jpeg'
+                img: '../img_dos_animais/Hipopotamo.jpeg',
+               
             },
             {
                 id: '4',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Hipopotamo.jpeg'
+                img: '../img_dos_animais/Hipopotamo.jpeg',
+               
             },
             {
                 id: '5',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Macaco.jpeg'
+                img: '../img_dos_animais/Macaco.jpeg',
+               
             },
             {
                 id: '5',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Macaco.jpeg'
+                img: '../img_dos_animais/Macaco.jpeg',
+               
             },
             {
                 id: '6',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tigre.jpeg'
+                img: '../img_dos_animais/Tigre.jpeg',
+               
             },
             {
                 id: '6',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tigre.jpeg'
+                img: '../img_dos_animais/Tigre.jpeg',
+               
             },
             {
                 id: '7',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tucano.jpeg'
+                img: '../img_dos_animais/Tucano.jpeg',
+               
             },
             {
                 id: '7',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tucano.jpeg'
+                img: '../img_dos_animais/Tucano.jpeg',
+               
             },
             {
                 id: '8',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Zebra.jpeg'
+                img: '../img_dos_animais/Zebra.jpeg',
+               
             },
             {
                 id: '8',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Zebra.jpeg'
+                img: '../img_dos_animais/Zebra.jpeg',
+               
             }
         ]
+
+        let start = 0
+        
+        const cardsContainer = document.getElementById('cards')
+
+        let cartasAbertas = 0
+
+        let primeiraCartaAberta = null
+
+        for (let i = 0; i < 4; i++) {
+            const linha = document.createElement('div')
+            linha.style.display = 'flex'
+            for (let j = start; j < start + 4; j++) {
+                const coluna = document.createElement('div')
+                // coluna.style.width = '20px'
+                coluna.style.height = '150px'
+                coluna.style.margin = '5px'
+                coluna.style.cursor = 'pointer'
+                coluna.id = cards[j].hash
+                coluna.className = 'closed'
+                coluna.onclick = () => flipCard(cards[j].hash)
+                const img = document.createElement('img')
+                img.setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
+                img.id = cards[j].hash
+                img.style.width = '100%'
+                img.style.height = '100%'
+                img.style.borderRadius = '25px'
+                coluna.appendChild(img)
+                linha.appendChild(coluna)
+            }
+            cardsContainer.children[0].appendChild(linha)
+            start += 4
+        }
+
+        function flipCard(id) {
+            const element = document.getElementById(id)
+            if (Array.from(element.classList).includes('closed')) {
+                const card = cards.find((c) => c.hash == id)
+                element.children[0].setAttribute('src', card.img)
+                element.classList.remove('closed')
+                element.classList.add('opened')
+                cartasAbertas++
+                
+                if (cartasAbertas == 1) {
+                    primeiraCartaAberta = card
+
+                } else {
+                    
+                    if (primeiraCartaAberta.id == card.id) {
+                        cartasAbertas = 0
+                        element.classList.remove('opened')
+                        document.getElementById(primeiraCartaAberta.hash).classList.remove('opened')
+                    } else {
+                        
+                        const cartasSelecionadas = document.querySelectorAll('.opened')
+                        primeiraCartaAberta = null
+                        cartasAbertas = 0
+                        setTimeout(() => {
+                            for ( const carta of cartasSelecionadas) {
+                                carta.children[0].setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
+                                carta.classList.remove('opened')
+                                carta.classList.add('closed')
+                            } 
+                        }, 1000)
+                            
+                    }
+                }
+            } 
+            
+        }
     </script>
 
 </body>
 
 </html>
+                
                 
