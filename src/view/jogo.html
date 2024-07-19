@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOGO DA MEMÓRIA</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+        integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <style>
         body {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -81,9 +83,9 @@
             height: 100%;
         }
 
-        a {
+        .backButton {
             text-decoration: none;
-            color: orange;
+            color: darkgreen;
             font-size: 60px;
             margin-top: -10px;
         }
@@ -97,7 +99,108 @@
             justify-content: center;
             align-items: center;
         }
-        
+
+        .telaDeVitoria {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2%;
+            color: white;
+            font-size: 100px;
+            z-index: 10;
+        }
+
+        .telaDeDerrota {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2%;
+            color: white;
+            font-size: 80px;
+            z-index: 10;
+        }
+
+        #contador {
+              display: flex;
+              justify-content: center;
+              position: absolute;
+              left: 55%;
+              font-size: 200%;
+              color: darkgreen;
+        }
+
+        .recomeçar {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 30%;
+            left: 45%;
+        }
+
+        .repeatButton {
+            height: 20%;
+            width: 20%;
+            text-decoration: none;
+            color: orange;
+            font-size: 60px;
+            padding-top: 10px;
+            position: absolute;
+            right: 63%;
+            bottom: 80%;
+        }
+
+        .cronometro {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 60px;
+            border-radius: 35px;
+            position: absolute;
+            left: 0.5%;
+        }
+
+        .home {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 45%;
+            bottom: 30%;
+        }
+
+        .homeButton {
+            height: 20%;
+            width: 20%;
+            text-decoration: none;
+            color: orange;
+            font-size: 60px;
+            padding-top: 10px;
+            position: absolute;
+            right: 56%;
+            bottom: 85%;
+        }
 
     </style>
 </head>
@@ -105,193 +208,304 @@
 <body>
     <div class="container">
         <div class="container-button">
+            
+            
             <div class="a-container">
-                <a href="./index.html">&#8592;</a>
+                <a class="backButton" href="./index.html">&#8592;</a>
             </div>
+        </div>
+
+        <div class="cronometro">
+            <img style="height: 70%;" src="../img_do_projeto/Contador-do-projeto.jpg" alt="">
+            <p id="contador"></p>
+
         </div>
 
         <div class="border">
             <div class="content" id="cards">
                 <div></div>
-               
+
             </div>
-            
             <div id="background"></div>
         </div>
     </div>
 
-    <script>
-        let cards = [
-            {
-                id: '1',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Girafa.jpg',
-            },
-            {
-                id: '1',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Girafa.jpg',
-               
-            },
-            {
-                id: '2',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Cobra.jpeg',
-               
-            },
-            {
-                id: '2',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Cobra.jpeg',
-               
-            },
-            {
-                id: '3',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Elefante.jpeg',
-               
-            },
-            {
-                id: '3',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Elefante.jpeg',
-               
-            },
-            {
-                id: '4',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Hipopotamo.jpeg',
-               
-            },
-            {
-                id: '4',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Hipopotamo.jpeg',
-               
-            },
-            {
-                id: '5',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Macaco.jpeg',
-               
-            },
-            {
-                id: '5',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Macaco.jpeg',
-               
-            },
-            {
-                id: '6',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tigre.jpeg',
-               
-            },
-            {
-                id: '6',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tigre.jpeg',
-               
-            },
-            {
-                id: '7',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tucano.jpeg',
-               
-            },
-            {
-                id: '7',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tucano.jpeg',
-               
-            },
-            {
-                id: '8',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Zebra.jpeg',
-               
-            },
-            {
-                id: '8',
-                hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Zebra.jpeg',
-               
+    <div id="vitoria" class="telaDeVitoria" style="display: none;">
+        Você Venceu!
+        <div class="home">
+            <a class="homeButton" href="./index.html">⌂</a>
+        </div>
+
+        <div class="recomeçar">
+            <div>
+                <a class="repeatButton" href="./jogo.html">↺</a>
+            </div>
+        </div>
+    </div>
+    <div class="border">
+        <div id="perdesse" class="telaDeDerrota" style="display: none;">
+            Você Perdeu!
+            <div class="home">
+                <a class="homeButton" href="./index.html">⌂</a>
+            </div>
+
+            <div class="recomeçar">
+                <div>
+                    <a class="repeatButton" href="./jogo.html">↺</a>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            let intervalId = null
+
+            regressiveCount(40)
+
+            let cards = [
+                {
+                    id: '1',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Girafa.jpg',
+                },
+                {
+                    id: '1',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Girafa.jpg',
+
+                },
+                {
+                    id: '2',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Cobra.jpeg',
+
+                },
+                {
+                    id: '2',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Cobra.jpeg',
+
+                },
+                {
+                    id: '3',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Elefante.jpeg',
+
+                },
+                {
+                    id: '3',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Elefante.jpeg',
+
+                },
+                {
+                    id: '4',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Hipopotamo.jpeg',
+
+                },
+                {
+                    id: '4',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Hipopotamo.jpeg',
+
+                },
+                {
+                    id: '5',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Macaco.jpeg',
+
+                },
+                {
+                    id: '5',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Macaco.jpeg',
+
+                },
+                {
+                    id: '6',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Tigre.jpeg',
+
+                },
+                {
+                    id: '6',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Tigre.jpeg',
+
+                },
+                {
+                    id: '7',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Tucano.jpeg',
+
+                },
+                {
+                    id: '7',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Tucano.jpeg',
+
+                },
+                {
+                    id: '8',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Zebra.jpeg',
+
+                },
+                {
+                    id: '8',
+                    hash: window.crypto.randomUUID().replaceAll("-", ""),
+                    img: '../img_dos_animais/Zebra.jpeg',
+
+                }
+            ]
+
+            cards = shuffleArray(cards)
+
+            let start = 0
+
+            const cardsContainer = document.getElementById('cards')
+
+            let cartasAbertas = 0
+
+            let primeiraCartaAberta = null
+
+            let cartasCertas = 0
+
+            for (let i = 0; i < 4; i++) {
+                const linha = document.createElement('div')
+                linha.style.display = 'flex'
+                for (let j = start; j < start + 4; j++) {
+                    const coluna = document.createElement('div')
+                    // coluna.style.width = '20px'
+                    coluna.style.height = '150px'
+                    coluna.style.margin = '5px'
+                    coluna.style.cursor = 'pointer'
+                    coluna.id = cards[j].hash
+                    coluna.className = 'closed'
+                    coluna.onclick = () => flipCard(cards[j].hash)
+                    const img = document.createElement('img')
+                    img.setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
+                    img.id = cards[j].hash
+                    img.style.width = '100%'
+                    img.style.height = '100%'
+                    img.style.borderRadius = '25px'
+                    coluna.appendChild(img)
+                    linha.appendChild(coluna)
+                }
+                cardsContainer.children[0].appendChild(linha)
+                start += 4
             }
-        ]
 
-        let start = 0
-        
-        const cardsContainer = document.getElementById('cards')
+            function flipCard(id) {
+                const element = document.getElementById(id)
+                if (Array.from(element.classList).includes('closed')) {
+                    const card = cards.find((c) => c.hash == id)
+                    element.children[0].setAttribute('src', card.img)
+                    element.classList.remove('closed')
+                    element.classList.add('opened')
+                    cartasAbertas++
 
-        let cartasAbertas = 0
+                    if (cartasAbertas == 1) {
+                        primeiraCartaAberta = card
 
-        let primeiraCartaAberta = null
-
-        for (let i = 0; i < 4; i++) {
-            const linha = document.createElement('div')
-            linha.style.display = 'flex'
-            for (let j = start; j < start + 4; j++) {
-                const coluna = document.createElement('div')
-                // coluna.style.width = '20px'
-                coluna.style.height = '150px'
-                coluna.style.margin = '5px'
-                coluna.style.cursor = 'pointer'
-                coluna.id = cards[j].hash
-                coluna.className = 'closed'
-                coluna.onclick = () => flipCard(cards[j].hash)
-                const img = document.createElement('img')
-                img.setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
-                img.id = cards[j].hash
-                img.style.width = '100%'
-                img.style.height = '100%'
-                img.style.borderRadius = '25px'
-                coluna.appendChild(img)
-                linha.appendChild(coluna)
-            }
-            cardsContainer.children[0].appendChild(linha)
-            start += 4
-        }
-
-        function flipCard(id) {
-            const element = document.getElementById(id)
-            if (Array.from(element.classList).includes('closed')) {
-                const card = cards.find((c) => c.hash == id)
-                element.children[0].setAttribute('src', card.img)
-                element.classList.remove('closed')
-                element.classList.add('opened')
-                cartasAbertas++
-                
-                if (cartasAbertas == 1) {
-                    primeiraCartaAberta = card
-
-                } else {
-                    
-                    if (primeiraCartaAberta.id == card.id) {
-                        cartasAbertas = 0
-                        element.classList.remove('opened')
-                        document.getElementById(primeiraCartaAberta.hash).classList.remove('opened')
                     } else {
-                        
-                        const cartasSelecionadas = document.querySelectorAll('.opened')
-                        primeiraCartaAberta = null
-                        cartasAbertas = 0
-                        setTimeout(() => {
-                            for ( const carta of cartasSelecionadas) {
-                                carta.children[0].setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
-                                carta.classList.remove('opened')
-                                carta.classList.add('closed')
-                            } 
-                        }, 1000)
-                            
+
+                        if (primeiraCartaAberta.id == card.id) {
+                            cartasAbertas = 0
+                            element.classList.remove('opened')
+                            document.getElementById(primeiraCartaAberta.hash).classList.remove('opened')
+                            cartasCertas++
+                        } else {
+
+                            const cartasSelecionadas = document.querySelectorAll('.opened')
+                            primeiraCartaAberta = null
+                            cartasAbertas = 0
+                            setTimeout(() => {
+                                for (const carta of cartasSelecionadas) {
+                                    carta.children[0].setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
+                                    carta.classList.remove('opened')
+                                    carta.classList.add('closed')
+                                }
+                            }, 1000)
+
+                        }
+                    }
+                    if (cartasCertas == 8) {
+                        checkVictory()
+                    }
+
+                }
+
+            }
+
+            function shuffleArray(cards) {
+                const newArray = []
+
+                const indices = []
+
+                for (let i = 0; newArray.length != cards.length; i++) {
+                    const indice = Math.floor(Math.random() * cards.length);
+
+                    if (!indices.includes(indice)) {
+                        newArray.push(cards[indice])
+                        indices.push(indice)
                     }
                 }
-            } 
-            
-        }
-    </script>
+
+                return newArray;
+            }
+
+            function checkVictory() {
+                setTimeout(() => {
+                    const closedCards = document.querySelectorAll('.closed');
+                    if (closedCards.length === 0) {
+                        document.getElementById('vitoria').style.display = 'flex';
+                        const cardsElement = document.getElementById('cards');
+                        cardsElement.innerHTML = ''
+                        clearTimeout(intervalId)
+                    }
+                }, 1000)
+            }
+
+            function regressiveCount(count) {
+                if (count < 0) {
+                    return
+                }
+
+                setTimeout(() => {
+                    console.log(count);
+
+                    count--;
+
+                    regressiveCount(count);
+                }, 1000)
+            }
+
+            function regressiveCount(count) {
+                if (count < 0) {
+                    document.getElementById('perdesse').style.display = 'flex';
+                    const cardsElement = document.getElementById('cards');
+                    cardsElement.innerHTML = ''
+                    return
+                }
+
+                const contador = document.getElementById('contador')
+                contador.innerHTML = count
+
+
+                const t = setTimeout(() => {
+                    console.log(count);
+
+                    count--;
+
+                    regressiveCount(count);
+                }, 1000)
+
+                intervalId = t
+            }
+        </script>
 
 </body>
 
 </html>
-                
-                
