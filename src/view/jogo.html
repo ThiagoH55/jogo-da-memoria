@@ -8,10 +8,17 @@
         integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220428/pngtree-animal-cartoon-in-the-beautiful-green-forest-landscape-image_1107110.jpg");
+            font-family: "Montserrat", sans-serif;
+            background-image: url("https://cdn.dribbble.com/userupload/10090102/file/original-79c9b9b4758e0fde95aff0bb199e2944.jpg?resize=1024x577");            
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -32,8 +39,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 20px solid rgb(10, 65, 28);
-            border-radius: 5%;
+            border: 15px solid #289e2c;
+            border-radius: 2%;
             padding: 7%;
             position: relative;
             margin: 0;
@@ -45,18 +52,6 @@
             text-align: center;
             min-height: auto;
             border: 20%;
-
-        }
-
-        input[type='button'] {
-            padding-inline: 50px;
-            padding-block: 50px;
-            border-radius: 50%;
-            padding: 6%;
-            background-color: rgba(173, 153, 66, 0.89);
-            border-color: rgba(102, 49, 6, 0.712);
-            cursor: pointer;
-
 
         }
 
@@ -73,10 +68,10 @@
         #background {
             height: 100%;
             width: 100%;
-            background-color: darkgreen;
+            background-color: #a5d6a7;
             position: absolute;
             z-index: 0;
-            opacity: 50%;
+            opacity: 80%;
         }
 
         .container-button {
@@ -85,9 +80,11 @@
 
         .backButton {
             text-decoration: none;
-            color: darkgreen;
+            color: #289e2c;
             font-size: 60px;
             margin-top: -10px;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #289e2c;
         }
 
         .a-container {
@@ -114,6 +111,11 @@
             flex-direction: column;
         }
 
+        .telaDeVitoria h1 {
+            font-family: "Lilita One", sans-serif;
+            font-weight: 100;
+        }
+
         .telaDeDerrota {
             position: fixed;
             top: 0;
@@ -134,7 +136,10 @@
             position: absolute;
             left: 55%;
             font-size: 200%;
-            color: darkgreen;
+            color: #289e2c;
+            font-family: "Lilita One", sans-serif;
+            font-weight: 100;
+            -webkit-text-stroke-color: #005803;
         }
 
         .recomeçar {
@@ -154,7 +159,7 @@
             height: 20%;
             width: 20%;
             text-decoration: none;
-            color: orange;
+            color: #289e2c;
             font-size: 60px;
             padding-top: 10px;
             /* position: absolute;
@@ -193,9 +198,11 @@
             width: 20%; */
 
             text-decoration: none;
-            color: orange;
+            color: #289e2c;
             font-size: 70px;
             margin-top: -10px;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #289e2c;
             /* padding-top: 10px; */
             /* position: absolute;
             right: 56%;
@@ -219,19 +226,49 @@
         h3,
         h4 {
             text-align: center;
+            color: darkgreen;
+        }
+
+        h1 {
+            color: rgb(255, 239, 91);
+            font-weight: 100;
+            font-size: 60px;
         }
 
         #ranking {
-            border: 1px solid black;
+            border: 5px solid darkgreen;
+            border-radius: 5px;
             margin-bottom: 20px;
         }
 
+        label{
+            color:#005803;
+            -webkit-text-stroke-width: 1px;
+        }
+
+        input {
+           
+            border: 3px solid #4caf50;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 5px; 
+        }
+
+        input[type='submit'] {
+            background-color: #2e7d32;
+            border: 3px solid #4caf50;
+            color: white;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 5px; 
+        }
+
         tr:nth-child(even) {
-            background-color: white;
+            background-color: rgb(236, 255, 236);
         }
 
         tr:nth-child(odd) {
-            background-color: lightgreen;
+            background-color: rgb(181, 233, 181);
         }
 
         td {
@@ -239,7 +276,7 @@
         }
 
         th {
-            background-color: yellow;
+            background-color: rgb(255, 239, 91);
         }
         
     </style>
@@ -290,14 +327,14 @@
             <form onsubmit="handleSubmit(event)">
 
                 <label for="">Apelido</label>
-                <input type="text" name="nickName" id="" placeholder="ngrug" required>
+                <input type="text" name="nickName" id="" placeholder="rato mil grau" required>
                 <label for="">Senha</label>
-                <input type="password" minlength="8" name="password" id="" placeholder="********" required>
+                <input type="password" minlength="8" name="password" id="" placeholder="" required>
                 <input class="conta" type="submit" value="Salvar">
 
             </form>
 
-            <p id="error"></p>
+            <p id="error" style="text-align: center; color: yellow; font-weight: 100; -webkit-text-stroke-width: 0.3px; -webkit-text-stroke-color: orange; font-size: 30px; font-family: 'Lilita One'", sans-serif;></p>
         </div>
 
         <div class="buttons">
@@ -472,7 +509,7 @@
                 coluna.className = 'closed'
                 coluna.onclick = () => flipCard(cards[j].hash)
                 const img = document.createElement('img')
-                img.setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
+                img.setAttribute('src', '../img_do_projeto/Parte_de_tras_dos_Cards.png')
                 img.id = cards[j].hash
                 img.style.width = '100%'
                 img.style.height = '100%'
@@ -510,7 +547,7 @@
                         cartasAbertas = 0
                         setTimeout(() => {
                             for (const carta of cartasSelecionadas) {
-                                carta.children[0].setAttribute('src', '../img_dos_animais/Parte_de_tras_dos_Cards.jpeg')
+                                carta.children[0].setAttribute('src', '../img_do_projeto/Parte_de_tras_dos_Cards.png')
                                 carta.classList.remove('opened')
                                 carta.classList.add('closed')
                             }
@@ -638,7 +675,7 @@
 
             users.sort((a, b) => a.time - b.time)
 
-            users = users.slice(0, 10)
+            users = users.slice(0, 5)
 
             for (const user of users) {
                 const row = document.createElement('tr')
