@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DA MEMÓRIA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+        integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="container">
+        <audio id="sonic" src="../audios_do_projeto/utomp3.com - Sonic 1 Music Drowning.mp3"></audio>
+        <div class="container-button">
+
+            <div id="returnButton" style="opacity: 1;">
+                <div class="a-container">
+                    <a class="backButton" href="./menu.html">&#8592;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cronometro">
+            <img style="height: 70%;" src="../img_do_projeto/Contador-do-projeto.jpg" alt="">
+            <p id="contador"></p>
+
+        </div>
+
+        <div class="border">
+            <div class="content" id="cards">
+                <div></div>
+
+            </div>
+            <div id="background"></div>
+        </div>
+    </div>
+
+    <div id="vitoria" class="telaDeVitoria" style="display: none;">
+        <h1>
+            Você Venceu!
+        </h1>
+
+        <table id="ranking">
+            <tr>
+                <th>Posição</th>
+                <th>nickname</th>
+                <th>tempo de jogo (segundos)</th>
+            </tr>
+
+            <tbody></tbody>
+        </table>
+        <div id="form">
+            <h3>Salvar pontuação</h3>
+            <h4 id="resultado"></h4>
+
+            <form onsubmit="handleSubmit(event)">
+
+                <label for="">Apelido</label>
+                <input type="text" name="nickName" id="" placeholder="nickname" required>
+                <!-- <label for="">Senha</label>
+                <input type="password" minlength="8" name="password" id="" placeholder="" required> -->
+                <input class="conta" type="submit" value="Salvar" cursor>
+
+            </form>
+
+            <p id="error" style="text-align: center; color: yellow; font-weight: 100; -webkit-text-stroke-width: 0.3px; -webkit-text-stroke-color: orange; font-size: 30px; font-family: 'Lilita One'", sans-serif;></p>
+        </div>
+
+        <div class="buttons">
+            <div class="home">
+                <div>
+                    <a class="homeButton" href="./menu.html">⌂</a>
+
+                </div>
+            </div>
+
+            <div class="recomeçar">
+                <div>
+                    <a class="repeatButton" href="./game.html">↺</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border">
+        <div id="perdesse" class="telaDeVitoria" style="display: none;">
+            <h1>
+                Você Perdeu!
+            </h1>
+
+            <div class="buttons">
+                <div class="home">
+                    <div>
+                        <a class="homeButton" href="./menu.html">⌂</a>
+                    </div>
+                </div>
+    
+                <div class="recomeçar">
+                    <div>
+                        <a class="repeatButton" href="./game.html">↺</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script src="./game.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220428/pngtree-animal-cartoon-in-the-beautiful-green-forest-landscape-image_1107110.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-attachment: fixed;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.titulo {
+    margin: 2%;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    display: block;
+    background-color: darkorange;
+    padding: 10px;
+    border-radius: 5%;
+    width: 30%;
+    box-shadow: 10px 10px lightgreen;
+    margin-bottom: 2%;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+    justify-content: start;
+    margin-left: 2%;
+}
+
+.right {
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+}
+
+.profile {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.contact {
+    display: none;
+}
+
+.content {
+    width: 70%;
+
+    position: relative;
+    z-index: 1;
+
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    background-color: darkgreen;
+    position: absolute;
+    z-index: 0;
+    opacity: 80%;
+    border-radius: 0.3%;
+}
+
+.primeira {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-block: 5%;
+}
+
+.button {
+    text-align: center;
+    min-height: auto;
+    border: 20%;
+    padding: 20px;
+    padding-inline: 18px;
+    padding-block: 10px;
+    border-radius: 50%;
+    background-color:rgba(173, 153, 66, 0.89);
+    border-color: rgba(102, 49, 6, 0.712);
+    box-shadow: 5px 5px black;
+    cursor: pointer;
+}
+
+.container-button {
+    display: flex; 
+    justify-content: start;
+    
+}

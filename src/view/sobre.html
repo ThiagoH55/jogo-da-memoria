@@ -5,124 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220428/pngtree-animal-cartoon-in-the-beautiful-green-forest-landscape-image_1107110.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            background-attachment: fixed;
-        }
-
-        .main {
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        .titulo {
-            margin: 2%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .container {
-            display: block;
-            background-color: darkorange;
-            padding: 10px;
-            border-radius: 5%;
-            width: 30%;
-            box-shadow: 10px 10px lightgreen;
-            margin-bottom: 2%;
-            word-wrap: break-word;
-            cursor: pointer;
-        }
-
-        .left {
-            display: flex;
-            justify-content: start;
-            margin-left: 2%;
-        }
-
-        .right {
-            display: flex;
-            justify-content: end;
-            margin-right: 2%;
-        }
-
-        .profile {
-            width: 100%;
-            border-radius: 5%;
-        }
-
-        .contact {
-            display: none;
-        }
-
-        .content {
-            width: 70%;
-
-            position: relative;
-            z-index: 1;
-
-        }
-
-        .background {
-            height: 100%;
-            width: 100%;
-            background-color: darkgreen;
-            position: absolute;
-            z-index: 0;
-            opacity: 80%;
-            border-radius: 0.3%;
-        }
-
-        .primeira {
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            text-align: center;
-            margin-block: 5%;
-        }
-
-        .button {
-            text-align: center;
-            min-height: auto;
-            border: 20%;
-            padding: 20px;
-            padding-inline: 18px;
-            padding-block: 10px;
-            border-radius: 50%;
-            background-color:rgba(173, 153, 66, 0.89);
-            border-color: rgba(102, 49, 6, 0.712);
-            box-shadow: 5px 5px black;
-            cursor: pointer;
-        }
-
-        .container-button {
-            display: flex; 
-            justify-content: start;
-            
-        }
-        </style>
+    <link rel="stylesheet" href="./sobre.css">
+    
 </head>
 
 <body>
     
     <div class="container-button">
-        <a href="./index.html">
+        <a href="./menu.html">
             <button class="button">VOLTAR</button>
         </a>
     </div>
     <div class="main">
         <div class="content">
             <div class="background"></div>
-
+            
             <div class="titulo">
                 <h1>Sobre nós</h1>
                 <p>Jogo da memoria, primeiro projeto desenvolvido por componentes de uma equipe com o objetivo de
@@ -131,278 +28,278 @@
                     memória de curto prazo, o raciocínio lógico, a coordenação motora e a agilidade mental. À medida
                     que os jogadores desafiam suas mentes, estão contribuindo para o fortalecimento de redes neurais
                     e para um desenvolvimento cognitivo mais completo.</p>
-            </div>
-
-            <div class="titulo">
-                <h1>Desenvolvedores</h1>
-            </div>
-
-            <div class="primeira">
-                <div class="left">
-                    <div id="thiago" class="container">
-
-
-                        <div onclick="mostrarContato('thiago-contact')">
-                            <div>
-                                <img class="profile"
+                </div>
+                
+                <div class="titulo">
+                    <h1>Desenvolvedores</h1>
+                </div>
+                
+                <div class="primeira">
+                    <div class="left">
+                        <div id="thiago" class="container">
+                            
+                            
+                            <div onclick="mostrarContato('thiago-contact')">
+                                <div>
+                                    <img class="profile"
                                     src="../img_dos_integrantes/Thiago2.jpg"
                                     alt="">
+                                </div>
+                                <div>
+                                    <h3>Thiago Santos</h3>
+                                </div>
+                                
                             </div>
-                            <div>
-                                <h3>Thiago Santos</h3>
-                            </div>
-
-                        </div>
-                        <div id="thiago-contact" class="contact">
-
-                            <div>
-                                <span style="font-weight: bold;">Responsabilidade:</span>
-                                Sobre
-                            </div>
-
-                            <div>
-                                <span style="font-weight: bold;">Whatsapp:</span>
-                                (81) 9 98965-4101
-                            </div>
-
-                            <div>
-                                <span style="font-weight: bold;">E-mail:</span>
-                                philipbhib15@gmail.com
-                            </div>
-
-                            <div>
-                                <span style="font-weight: bold;">GitHub:</span>
-                                ThiagoH55
-                            </div>
-
-                            <div>
-                                <a href="https://www.instagram.com/thi5go__h?igsh=MXE4OXI3dGh6czRkaA=="
+                            <div id="thiago-contact" class="contact">
+                                
+                                <div>
+                                    <span style="font-weight: bold;">Responsabilidade:</span>
+                                    Sobre
+                                </div>
+                                
+                                <div>
+                                    <span style="font-weight: bold;">Whatsapp:</span>
+                                    (81) 9 98965-4101
+                                </div>
+                                
+                                <div>
+                                    <span style="font-weight: bold;">E-mail:</span>
+                                    philipbhib15@gmail.com
+                                </div>
+                                
+                                <div>
+                                    <span style="font-weight: bold;">GitHub:</span>
+                                    ThiagoH55
+                                </div>
+                                
+                                <div>
+                                    <a href="https://www.instagram.com/thi5go__h?igsh=MXE4OXI3dGh6czRkaA=="
                                     target="_blank">Instagram</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="right">
-                    <div id="emanuel" class="container">
-
-
-                        <div onclick="mostrarContato('emanuel-contact')">
-                            <div>
-                                <img class="profile"
+                    
+                    <div class="right">
+                        <div id="emanuel" class="container">
+                            
+                            
+                            <div onclick="mostrarContato('emanuel-contact')">
+                                <div>
+                                    <img class="profile"
                                     src="../img_dos_integrantes/Emanuel.jpg"
                                     alt="">
+                                </div>
+                                <div>
+                                    <h3>Emanuel Arcanjo</h3>
+                                </div>
+                                
                             </div>
-                            <div>
-                                <h3>Emanuel Arcanjo</h3>
-                            </div>
-
-                        </div>
-                        <div id="emanuel-contact" class="contact">
-
-                            <div>
-                                <span style="font-weight: bold;">Responsabilidade:</span>
-                                Menu
-                            </div>
-
-                            <div>
-                                <span style="font-weight: bold;">Whatsapp:</span>
-                                (81) 9 9125-3835
-                            </div>
-
-                            <div>
-                                <span style="font-weight: bold;">E-mail:</span>
-                                emannuelsiilva2002@gmail.com
-                            </div>
-
-                            <div>
-                                <span style="font-weight: bold;">GitHub:</span>
-                                EMANUEL BRITT
-                            </div>
-
-                            <div>
-                                <a href="https://www.instagram.com/victtor_eul?igsh=NWVtb3pnaDN6eHk4"
+                            <div id="emanuel-contact" class="contact">
+                                
+                                <div>
+                                    <span style="font-weight: bold;">Responsabilidade:</span>
+                                    Menu
+                                </div>
+                                
+                                <div>
+                                    <span style="font-weight: bold;">Whatsapp:</span>
+                                    (81) 9 9125-3835
+                                </div>
+                                
+                                <div>
+                                    <span style="font-weight: bold;">E-mail:</span>
+                                    emannuelsiilva2002@gmail.com
+                                </div>
+                                
+                                <div>
+                                    <span style="font-weight: bold;">GitHub:</span>
+                                    EMANUEL BRITT
+                                </div>
+                                
+                                <div>
+                                    <a href="https://www.instagram.com/victtor_eul?igsh=NWVtb3pnaDN6eHk4"
                                     target="_blank">Instagram</a>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
-
+                
                 <div class="left">
                     <div id="laryssa" class="container">
-
-
+                        
+                        
                         <div onclick="mostrarContato('laryssa-contact')">
                             <div>
                                 <img class="profile"
-                                    src="../img_dos_integrantes/Laryssa.jpg"
-                                    alt="">
+                                src="../img_dos_integrantes/Laryssa.jpg"
+                                alt="">
                             </div>
                             <div>
                                 <h3>Laryssa Medeiros</h3>
                             </div>
-
+                            
                         </div>
                         <div id="laryssa-contact" class="contact">
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Responsabilidade:</span>
                                 Menu
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Whatsapp:</span>
                                 (81) 9 8264-8396
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">E-mail:</span>
                                 Laryssasilva2016pebr@gmail.com
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">GitHub:</span>
                                 larycaw
                             </div>
-
+                            
                             <div>
                                 <a href="https://www.instagram.com/la.ryssw?igsh=dHdndmc2aGpwMXVm"
-                                    target="_blank">Instagram</a>
+                                target="_blank">Instagram</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="right">
                     <div id="vinicius" class="container">
-
-
+                        
+                        
                         <div onclick="mostrarContato('vinicius-contact')">
                             <div>
                                 <img class="profile"
-                                    src="../img_dos_integrantes/Vinicius.jpg"
-                                    alt="">
+                                src="../img_dos_integrantes/Vinicius.jpg"
+                                alt="">
                             </div>
                             <div>
                                 <h3>Vinicius Brito</h3>
                             </div>
-
+                            
                         </div>
                         <div id="vinicius-contact" class="contact">
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Responsabilidade:</span>
                                 Menu
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Whatsapp:</span>
                                 (81) 9 8814-5728
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">E-mail:</span>
                                 Viníciuslc@gmail.com
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">GitHub:</span>
                                 vzin
                             </div>
-
+                            
                             <div>
                                 <a href="https://www.instagram.com/vzin.o7?igsh=NWdveGQxMXlwamV2"
-                                    target="_blank">Instagram</a>
+                                target="_blank">Instagram</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="left">
                     <div id="juan" class="container">
-
-
+                        
+                        
                         <div onclick="mostrarContato('juan-contact')">
                             <div>
                                 <img class="profile"
-                                    src="../img_dos_integrantes/Juan.jpg"
-                                    alt="">
+                                src="../img_dos_integrantes/Juan.jpg"
+                                alt="">
                             </div>
                             <div>
                                 <h3>Juan da Silva</h3>
                             </div>
-
+                            
                         </div>
                         <div id="juan-contact" class="contact">
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Responsabilidade:</span>
                                 Menu
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Whatsapp:</span>
                                 (81) 99621-4333
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">E-mail:</span>
                                 juancristen88551@gmail.com
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">GitHub:</span>
                                 JuanOly
                             </div>
-
+                            
                             <div>
                                 <a href="https://www.instagram.com/soothjuan?igsh=MXVqMHlieWJ5cDFyNQ=="
-                                    target="_blank">Instagram</a>
+                                target="_blank">Instagram</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="right">
                     <div id="elaynne" class="container">
-
-
+                        
+                        
                         <div onclick="mostrarContato('elaynne-contact')">
                             <div>
                                 <img class="profile"
-                                    src="../img_dos_integrantes/Elaynne.jpg"
-                                    alt="">
+                                src="../img_dos_integrantes/Elaynne.jpg"
+                                alt="">
                             </div>
                             <div>
                                 <h3>Elaynne dos Santos</h3>
                             </div>
-
+                            
                         </div>
                         <div id="elaynne-contact" class="contact">
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Responsabilidade:</span>
                                 Sobre
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">Whatsapp:</span>
                                 (81) 9 9781-8790
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">E-mail:</span>
                                 Santosfernandes064@gmail.com
                             </div>
-
+                            
                             <div>
                                 <span style="font-weight: bold;">GitHub:</span>
                                 elaynne-santos
                             </div>
-
+                            
                             <div>
                                 <a href="https://www.instagram.com/elaynnefernand5?igsh=amNrbTF5cnl5cm4w"
-                                    target="_blank">Instagram</a>
+                                target="_blank">Instagram</a>
                             </div>
                         </div>
                     </div>
@@ -410,18 +307,9 @@
             </div>
         </div>
     </div>
+    
+    <script src="./sobre.js"></script>
 
-    <script>
-        function mostrarContato(id) {
-            const element = document.getElementById(id)
-
-            if (element.style.display != 'block') {
-                element.style.display = 'block'
-            } else {
-                element.style.display = 'none'
-            }
-        }
-    </script>
 </body>
 
 </html>
