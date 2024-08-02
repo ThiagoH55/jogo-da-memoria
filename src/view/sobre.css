@@ -1,6 +1,6 @@
 body {
     font-family: "Montserrat", sans-serif;
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20220428/pngtree-animal-cartoon-in-the-beautiful-green-forest-landscape-image_1107110.jpg");
+    background-image: url("https://cdn.dribbble.com/userupload/10094950/file/original-dcf36a3cd205cd5e0e2189249aba39d5.jpg?resize=752x"); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -22,11 +22,11 @@ body {
 
 .container {
     display: block;
-    background-color: darkorange;
+    background-color: #db3431;
     padding: 10px;
     border-radius: 5%;
     width: 30%;
-    box-shadow: 10px 10px lightgreen;
+    box-shadow: 10px 10px #022b02;
     margin-bottom: 2%;
     word-wrap: break-word;
     cursor: pointer;
@@ -55,7 +55,6 @@ body {
 
 .content {
     width: 70%;
-
     position: relative;
     z-index: 1;
 
@@ -64,11 +63,11 @@ body {
 .background {
     height: 100%;
     width: 100%;
-    background-color: darkgreen;
+    background-color: #5e9b60;
     position: absolute;
     z-index: 0;
     opacity: 80%;
-    border-radius: 0.3%;
+    border-radius: 1.5%;
 }
 
 .primeira {
@@ -81,22 +80,38 @@ h1 {
     margin-block: 5%;
 }
 
-.button {
-    text-align: center;
-    min-height: auto;
-    border: 20%;
-    padding: 20px;
-    padding-inline: 18px;
-    padding-block: 10px;
-    border-radius: 50%;
-    background-color:rgba(173, 153, 66, 0.89);
-    border-color: rgba(102, 49, 6, 0.712);
-    box-shadow: 5px 5px black;
-    cursor: pointer;
+.a-container {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-button {
+    height: 100%;
+}
+.backButton {
+    text-decoration: none;
+    color: #289e2c;
+    font-size: 7vh;
+    margin-top: -10px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #289e2c;
+}
+a {
+    transition: transform 0.3s ease;
 }
 
-.container-button {
-    display: flex; 
-    justify-content: start;
-    
+a:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.04);
 }
