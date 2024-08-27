@@ -1,0 +1,277 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url('../img_dos_funcionarios_pc/Entrada-do-pc.jpg');            
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.container {
+    height: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border {
+    height: 58%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid #005aa5;
+    border-radius: 2%;
+    padding: 7%;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+.button {
+    text-align: center;
+    min-height: auto;
+    border: 20%;
+
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-color: #202ab0b6;
+    position: absolute;
+    z-index: 0;
+    opacity: 80%;
+}
+
+.container-button {
+    height: 100%;
+}
+
+.backButton {
+    text-decoration: none;
+    color: #289e2c;
+    font-size: 300%;
+    margin-top: -10px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #489dff;
+}
+
+.a-container {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaDeVitoria {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.telaDeVitoria h1 {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100;
+}
+
+.telaDeDerrota {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    z-index: 10;
+    flex-direction: column;
+}
+
+#contador {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 55%;
+    font-size: 175%;
+    color: #289e2c;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100%;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #005803;
+}
+
+.recomeçar {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.repeatButton {
+    height: 20%;
+    width: 20%;
+    text-decoration: none;
+    color: #3209a2;
+    font-size: 60px;
+    padding-top: 10px;
+}
+
+.cronometro {
+    width: 5%;
+    height: 8%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3%;
+    border-radius: 35px;
+    position: absolute;
+    left: 0.5%;
+}
+
+.home {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeButton {            
+    text-decoration: none;
+    color: #3209a2;
+    font-size: 70px;
+    margin-top: -10px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #3209a2;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.home div {
+    margin-top: -15px;
+}
+
+.recomeçar div {
+    margin-bottom: -5px;
+}
+
+h3,
+h4 {
+    text-align: center;
+    color: #ffffff;
+}
+
+h1 {
+    color: #5af4e0;
+    font-weight: 100;
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+}
+
+#ranking {
+    border: 5px solid rgb(0, 187, 255);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+label{
+    color:#022b02;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff;
+}
+
+input {
+   
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 5px; 
+}
+
+input[type='submit'] {
+    background-color: #3073a6;
+    border: 3px solid #07719b;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(236, 255, 236);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(217, 234, 255);
+}
+
+td {
+    text-align: center;
+    font-weight: 100;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+}
+
+th {
+    background-color: #6ffbb5e0;
+}
+
+.card {
+    transition: transform 0.3s ease; 
+}
+
+.card:hover {
+    transform: scale(1.1); 
+}
+
+a {
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    transform: scale(1.1);
+}
+
+.conta {
+    transition: transform 0.3s ease;
+}
+
+.conta:hover {
+    transform: scale(1.1);
+}
