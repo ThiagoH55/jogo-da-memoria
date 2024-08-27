@@ -81,25 +81,25 @@ let score = 0
             {
                 id: '7',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tucano.jpeg',
+                img: '../img_dos_funcionarios_pc/Fábio.jpg',
 
             },
             {
                 id: '7',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Tucano.jpeg',
+                img: '../img_dos_funcionarios_pc/Fábio.jpg',
 
             },
             {
                 id: '8',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Zebra.jpeg',
+                img: '../img_dos_funcionarios_pc/Eduarda.jpg',
 
             },
             {
                 id: '8',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_animais/Zebra.jpeg',
+                img: '../img_dos_funcionarios_pc/Eduarda.jpg',
 
             }
         ]
