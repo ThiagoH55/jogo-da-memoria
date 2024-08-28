@@ -57,13 +57,13 @@ let score = 0
             {
                 id: '5',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_funcionarios_pc/Seu-joão.jpg',
+                img: '../img_dos_funcionarios_pc/Seu-João.jpg',
 
             },
             {
                 id: '5',
                 hash: window.crypto.randomUUID().replaceAll("-", ""),
-                img: '../img_dos_funcionarios_pc/Seu-joão.jpg',
+                img: '../img_dos_funcionarios_pc/Seu-João.jpg',
 
             },
             {
